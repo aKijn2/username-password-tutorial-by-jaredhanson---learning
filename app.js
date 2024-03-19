@@ -4,9 +4,14 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger = require("morgan");
+var passport = require("passport");
+var session = require("express-session");
 
-var indexRouter = require('./routes/index');
+var SQLiteStore = require("connect-sqlite3")(session);
+var indexRouter = require("./routes/index");
+
+
 
 // sortutako index eta auth rutak gehitu ditugu.
 var indexRouter = require('./routes/index');
